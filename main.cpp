@@ -7,6 +7,6 @@ int main() {
 	//SetConsoleOutputCP(65001);
 
 	//char str[] = "ソ";
-	printf("アイウエオ");
+	printf("東京ゲームショウ");
 	return 0;
 }
