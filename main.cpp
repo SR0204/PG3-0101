@@ -1,12 +1,15 @@
 #include<stdio.h>
-#include<iostream>
-#include<Windows.h>
+#include<functional>
 
-int main() {
 
-	//SetConsoleOutputCP(65001);
+int main(int argc,const char*argv[]) {
 
-	//char str[] = "ソ";
-	printf("東京ゲームショウ");
+	std::function<int(int)>fx = [](int t) {return 5 + 1; };
+
+	auto fx2 = [](int i) {return 3 + 1; };
+
+
+	printf("%d", fx2);
+
 	return 0;
 }
