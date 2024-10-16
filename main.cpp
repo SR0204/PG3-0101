@@ -1,29 +1,99 @@
-#include<stdio.h>
-#include<Windows.h>
+#include <stdio.h>
+#include <windows.h>
+#include <time.h>
 
-typedef void(*PFunc)(int*);
+typedef void (*PFunc)(int*);
 
-void DispResult(int* s) {
-
-	printf("成功\n", *s);
-
+//コールバック関数
+void DispResult(int*x)
+{
+	
 }
 
-void setTimeout(PFunc p, int second) {
-
-	//コールバック関数を呼び出す
+void SetTimeOut(PFunc y, int second)
+{
+	//コールバック関数呼び出し
 	Sleep(second * 1000);
 
-	p(&second);
+	y(&second);
 }
 
-int main() {
 
-	printf("start\n");
+void game()
+{
+	
+	unsigned int currentTime = time(nullptr);
+	srand(currentTime);
 
+	const int diceNum = 2;
+	int pip[diceNum];
+	int pipTotal = 0;
+
+	//サイコロの出目
+	for (int i = 0; i < diceNum; i++)
+	{
+		pip[i] = rand() % 6;
+
+		pipTotal += pip[i];
+	}
+
+	printf("丁か半か。丁：０　半：1\n");
+
+	
+	int num = 0;
+	scanf_s("%d", &num);
+
+	if (num == 0)
+	{
+		printf("丁を選択\n");
+	}
+	else if (num == 1)
+	{
+		printf("半を選択\n");
+	}
+
+	//コールバック関数
 	PFunc p;
 	p = DispResult;
-	setTimeout(p, 3);
+	SetTimeOut(p, 3);
+
+	//結果
+	if (pipTotal % 2 == 0)
+	{
+
+		if (num == 0)
+		{
+			printf("当たり\n");
+		}
+		else if (num == 1)
+		{
+			printf("間違い\n");
+		}
+
+		printf("結果　丁\n");
+	}
+	else if (pipTotal % 2 == 1)
+	{
+
+		if (num == 0)
+		{
+			printf("間違い\n");
+		}
+		else if (num == 1)
+		{
+			printf("当たり\n");
+		}
+
+		printf("結果　半\n");
+	}
+	printf("サイコロの出た目  [%d] [%d]\n", pip[0], pip[1]);
+
+	printf("サイコロの合計 %d\n", pipTotal);
+}
+
+int main()
+{
+	game();
 
 	return 0;
 }
