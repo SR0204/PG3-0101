@@ -10,7 +10,7 @@ int main() {
 
 		int s;
 
-		printf("0�ő����āA�P�ŏI���\n");
+		printf("0で次のフェーズ、1でループを抜ける\n");
 
 		scanf_s("%d", &s);
 
