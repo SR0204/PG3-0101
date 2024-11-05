@@ -1,12 +1,24 @@
 #include<stdio.h>
-#include<iostream>
-#include<Windows.h>
-
+#include"Enemy.h"
 int main() {
 
-	//SetConsoleOutputCP(65001);
+	Enemy enemy;
 
-	//char str[] = "ソ";
-	printf("東京ゲームショウ");
+	while (true) {
+
+		enemy.Update();
+
+		int s;
+
+		printf("0�ő����āA�P�ŏI���\n");
+
+		scanf_s("%d", &s);
+
+		if (s == 1) {
+			break;
+		}
+
+	}
+
 	return 0;
 }
