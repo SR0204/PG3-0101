@@ -9,6 +9,6 @@ void Circle::Size() {
 
 void Circle::Draw() {
 
-	printf("Circle�̖ʐ�=%.1f\n", area);
+	printf("Circle面積=%.1f\n", area);
 
 }
