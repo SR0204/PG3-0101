@@ -1,12 +1,25 @@
-#include<stdio.h>
-#include<iostream>
-#include<Windows.h>
+#include <GameManeger.h>
 
-int main() {
+const char kWindowTitle[] = "LE2C_スズキレオ";
 
-	//SetConsoleOutputCP(65001);
 
-	//char str[] = "ソ";
-	printf("東京ゲームショウ");
+// Windowsアプリでのmain関数
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
+
+	// ライブラリの初期化
+	Novice::Initialize(kWindowTitle, 1280, 720);
+
+	//GameManegerクラスのインスタンスを作成する
+	GameManeger* gameManeger = new GameManeger();
+
+	//GameManegerクラスからメンバ関数Runを呼び出す
+	gameManeger->Run();
+
+	// ライブラリの終了
+	Novice::Finalize();
+
+	//GameManegerを解放
+	delete gameManeger;
+
 	return 0;
 }

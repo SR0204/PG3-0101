@@ -128,7 +128,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClearScene.cpp" />
+    <ClCompile Include="GameManeger.cpp" />
+    <ClCompile Include="IScene.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="StageScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClearScene.h" />
+    <ClInclude Include="GameManeger.h" />
+    <ClInclude Include="IScene.h" />
+    <ClInclude Include="StageScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
