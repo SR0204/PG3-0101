@@ -1,12 +1,20 @@
-#include<stdio.h>
-#include<iostream>
-#include<Windows.h>
+#include <iostream>
+#include <thread>
+
+using namespace std;
+
+void PrintThread(uint32_t num) {
+	cout << "thread No" << num << endl;
+}
 
 int main() {
 
-	//SetConsoleOutputCP(65001);
+	thread t1(PrintThread, 1);
+	t1.join();
+	thread t2(PrintThread, 2);
+	t2.join();
+	thread t3(PrintThread, 3);
+	t3.join();
 
-	//char str[] = "ソ";
-	printf("東京ゲームショウ");
 	return 0;
 }
